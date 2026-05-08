@@ -1,6 +1,6 @@
 # Week 5 Project Feedback by PM/TA
 
-**Dedicated PM/TA**: NAME (EMAIL)
+**Dedicated PM/TA**: Paula Eyituoyo Fregene (paulafregene2027@u.northwestern.edu)
 
 ## How to Read This Feedback
 > [!NOTE]
