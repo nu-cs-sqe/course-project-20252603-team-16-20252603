@@ -47,30 +47,34 @@
 
 ## Method under test: `collect(ResourceType, int amount)`
 
-- **TC10: Collect_WithNullType_ThrowsIllegalArgumentException** ( :x: )
+- **TC10: Collect_WithNullType_ThrowsIllegalArgumentException** ( :white_check_mark: )
   - **State of the system**: valid Bank, `null` type
   - **Expected output**: `IllegalArgumentException`
 
-- **TC11: Collect_WithNegativeAmount_ThrowsIllegalArgumentException** ( :x: )
+- **TC11: Collect_WithNegativeAmount_ThrowsIllegalArgumentException** ( :white_check_mark: )
   - **State of the system**: valid Bank, amount = -1
   - **Expected output**: `IllegalArgumentException`
 
-- **TC12: Collect_WithAmountZero_NoChange** ( :x: )
+- **TC12: Collect_WithAmountZero_NoChange** ( :white_check_mark: )
   - **State of the system**: Bank with 5 BRICK, amount = 0
   - **Expected output**: `getResourceCount(BRICK)` still returns `5`
   
-- **TC13: Collect_WithAmountOne_NoExceptionThrown** ( :x: )
+- **TC13: Collect_WithAmountOne_NoExceptionThrown** ( :white_check_mark: )
   - **State of the system**: Bank with 5 BRICK, amount = 1
   - **Expected output**: `getResourceCount(BRICK)` returns `6`
 
-- **TC14: Collect_ExactlyBelowMax_AtNineteen** ( :x: )
+- **TC14: Collect_ExactlyBelowMax_AtNineteen** ( :white_check_mark:)
   - **State of the system**: Bank with 18 BRICK, amount = 1 (at boundary)
   - **Expected output**: `getResourceCount(BRICK)` returns `19`
 
-- **TC15: Collect_OneMoreThanAvailableSpace_ThrowsIllegalArgumentException** ( :x: )
+- **TC15: Collect_OneMoreThanAvailableSpace_ThrowsIllegalArgumentException** ( :white_check_mark: )
   - **State of the system**: Bank with 18 BRICK, amount = 2 (one above boundary)
   - **Expected output**: `IllegalArgumentException`
 
-- **TC16: Collect_FromZeroToOne_NoExceptionThrown** ( :x: )
+- **TC16: Collect_FromZeroToOne_NoExceptionThrown** ( :white_check_mark: )
   - State of the system: Bank with 0 BRICK, amount = 1 
   - Expected output: `getResourceCount(BRICK)` returns `1`
+
+- **TC17: Collect_WhenResultExactlyNineteen_NoExceptionThrown** ( :white_check_mark: )
+  - **State of the system**: Bank with 17 BRICK, amount = 2
+  - **Expected output**: `getResourceCount(BRICK)` returns `19`

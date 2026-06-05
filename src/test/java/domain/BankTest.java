@@ -111,4 +111,23 @@ public class BankTest {
         bank.collect(ResourceType.BRICK, 1);
         assertEquals(1, bank.getResourceCount(ResourceType.BRICK));
     }
+
+    @Test
+    void Collect_WithNullType_ThrowsIllegalArgumentException() {
+        Bank bank = new Bank();
+        assertThrows(IllegalArgumentException.class, () -> bank.collect(null, 1));
+    }
+
+    @Test
+    void Collect_WithNegativeAmount_ThrowsIllegalArgumentException() {
+        Bank bank = new Bank();
+        assertThrows(IllegalArgumentException.class, () -> bank.collect(ResourceType.BRICK, -1));
+    }
+
+    @Test
+    void Collect_WhenResultExactlyNineteen_NoExceptionThrown() {
+        Bank bank = bankWithBrick(17);
+        bank.collect(ResourceType.BRICK, 2);
+        assertEquals(19, bank.getResourceCount(ResourceType.BRICK));
+    }
 }
